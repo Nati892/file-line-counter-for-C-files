@@ -9,6 +9,7 @@ This program scanns all .c files and returns the amount of lines of code in each
 #include <string.h>
 
 #define C_ENDING ".c"
+#define H_ENDING ".h"
 #define THIS_FOLDER "."
 #define BACK_FOLDER ".."
 #define DIG_IN "-d"
@@ -88,7 +89,7 @@ int countLinesIfC(char *name)
     return 0;
 
   name_ending = (name + strlen(name) - 2);
-  if (!strcmp(name_ending, C_ENDING))
+  if (!strcmp(name_ending, C_ENDING) || !strcmp(name_ending, H_ENDING))
   {
     printf("file name: %s\n", name);
     temp = CountLines((name));
